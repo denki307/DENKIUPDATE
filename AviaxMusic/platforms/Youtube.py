@@ -528,7 +528,7 @@ class YouTubeAPI:
                     {
                         "key": "FFmpegExtractAudio",
                         "preferredcodec": "mp3",
-                        "preferredquality": "192",
+                        "preferredquality": "320",
                     }
                 ],
             }
@@ -591,4 +591,5 @@ class YouTubeAPI:
         else:
             direct = True
             downloaded_file = await download_song(link)
+
         return downloaded_file, direct
