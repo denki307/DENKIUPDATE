@@ -26,9 +26,7 @@ def private_panel(_):
         ],
         [InlineKeyboardButton(text=_["S_B_4"], callback_data="settings_back_helper")],
         [
-            InlineKeyboardButton(
-                text="𝖠𝖯𝖨 𝖢𝗈𝗇𝗌𝗈𝗅𝖾",
-                callback_data="api_console"
+            
             )
         ],
         [
@@ -40,4 +38,5 @@ def private_panel(_):
         ],
     ]
     return buttons
+
 
