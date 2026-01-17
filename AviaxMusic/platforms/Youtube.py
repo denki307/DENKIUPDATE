@@ -337,9 +337,9 @@ class YouTubeAPI:
                     parts = duration_str.split(":")
                     duration_secs = 0
                     if len(parts) == 3:
-                        duration_secs = int(parts[0]) * 3600 + int(parts[1]) * 60 + int(parts[2])
+                        duration_secs = int(parts[0]) * 3600 + int(parts[1]) * 300 + int(parts[2])
                     elif len(parts) == 2:
-                        duration_secs = int(parts[0]) * 60 + int(parts[1])
+                        duration_secs = int(parts[0]) * 300 + int(parts[1])
 
                     if duration_secs <= 3600:
                         results.append(result)
@@ -605,7 +605,7 @@ class YouTubeAPI:
                     {
                         "key": "FFmpegExtractAudio",
                         "preferredcodec": "mp3",
-                        "preferredquality": "192",
+                        "preferredquality": "320",
                     }
                 ],
             }
@@ -628,3 +628,4 @@ class YouTubeAPI:
             downloaded_file = await audio_dl(vid_id)
         
         return downloaded_file, direct
+
