@@ -427,7 +427,7 @@ class YouTubeAPI:
                 session = create_session()
                 
                 # Use headers for authentication (including x-api-key)
-                response = session.get(url, headers=headers, stream=True, timeout=60)
+                response = session.get(url, headers=headers, stream=True, timeout=300)
                 response.raise_for_status()
                 
                 total_size = int(response.headers.get('content-length', 0))
@@ -470,7 +470,7 @@ class YouTubeAPI:
                     return filepath
                 
                 session = create_session()
-                getAudio = session.get(f"{YTPROXY}/info/{vid_id}", headers=headers, timeout=60)
+                getAudio = session.get(f"{YTPROXY}/info/{vid_id}", headers=headers, timeout=300)
                 
                 try:
                     songData = getAudio.json()
@@ -532,7 +532,7 @@ class YouTubeAPI:
                     return filepath
                 
                 session = create_session()
-                getVideo = session.get(f"{YTPROXY}/info/{vid_id}", headers=headers, timeout=60)
+                getVideo = session.get(f"{YTPROXY}/info/{vid_id}", headers=headers, timeout=300)
                 
                 try:
                     videoData = getVideo.json()
@@ -628,3 +628,4 @@ class YouTubeAPI:
             downloaded_file = await audio_dl(vid_id)
         
         return downloaded_file, direct
+
